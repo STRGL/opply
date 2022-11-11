@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Suppliers</h1>
+        <h2>Suppliers</h2>
         <OCardsList :list="suppliers" />
     </div>
 </template>

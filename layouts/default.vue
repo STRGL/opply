@@ -1,0 +1,22 @@
+<template>
+    <div>
+        <nav class="w-full h-16 bg-blue-600">
+            <div class="container w-full mx-auto max-w-screen-lg p-4 flex gap-x-3 justify-between">
+                <nuxt-link to="/" class="">Home</nuxt-link>
+                <div class="flex gap-x-3">
+                    <nuxt-link to="/quotes/">Quotes</nuxt-link>
+                    <nuxt-link to="/suppliers/">Suppliers</nuxt-link>
+                </div>
+            </div>
+        </nav>
+        <div class="container w-full mx-auto max-w-screen-lg p-4">
+            <nuxt />
+        </div>
+    </div>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style lang="scss"></style>

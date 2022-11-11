@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>Suppliers</h2>
-        <OCardsList :list="suppliers" />
+        <OCardsList :list="suppliers" :clickable="true" />
     </div>
 </template>
 

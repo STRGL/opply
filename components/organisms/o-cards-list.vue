@@ -1,7 +1,10 @@
 <template>
     <div class="mx-auto grid gap-4 my-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
         <template v-for="item in list">
-            <MCard :key="item.id" :item="item" />
+            <nuxt-link v-if="clickable" :key="item.id" :to="`${$nuxt.$route.path}${item.id}/`" class="w-full">
+                <MCard :item="item" :clickable="clickable" />
+            </nuxt-link>
+            <MCard v-else :key="item.id" :item="item" />
         </template>
     </div>
 </template>
@@ -18,6 +21,10 @@ export default {
         list: {
             type: Array,
             required: true,
+        },
+        clickable: {
+            type: Boolean,
+            default: false,
         },
     },
 }

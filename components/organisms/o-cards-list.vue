@@ -13,7 +13,7 @@
 import MCard from '@/components/molecules/m-card.vue'
 
 export default {
-    name: 'MCardsList',
+    name: 'OCardsList',
     components: {
         MCard,
     },

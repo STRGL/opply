@@ -11,9 +11,14 @@ export default {
     name: 'RegisterPage',
     components: { mLoginForm },
     methods: {
-        registerUser(loginInfo) {
-            console.log(loginInfo)
-            alert('Logging In')
+        async registerUser(registrationInfo) {
+            try {
+                await this.$axios.post('/api/v1/users/', registrationInfo)
+                this.$auth.loginWith('local', { data: registrationInfo })
+            } catch (error) {
+                // eslint-disable-next-line no-console
+                console.error('Failed to register user:', error)
+            }
         },
     },
 }

@@ -12,12 +12,17 @@ export default {
     components: { mLoginForm },
     methods: {
         loginUser(loginInfo) {
-            this.$auth.loginWith('local', {
-                data: {
-                    username: loginInfo.username,
-                    password: loginInfo.password,
-                },
-            })
+            try {
+                this.$auth.loginWith('local', {
+                    data: {
+                        username: loginInfo.username,
+                        password: loginInfo.password,
+                    },
+                })
+            } catch (error) {
+                // eslint-disable-next-line no-console
+                console.error('Failed to login in:', error)
+            }
         },
     },
 }

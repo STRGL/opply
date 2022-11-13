@@ -22,6 +22,7 @@ export default {
         OCardsList,
         MPagination,
     },
+    middleware: 'auth',
     async asyncData({ $axios }) {
         const { data } = await $axios.get('/api/v1/quotes/')
         return {

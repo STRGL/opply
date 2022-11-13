@@ -64,7 +64,7 @@ export default {
                 },
                 user: {
                     property: 'auth.id',
-                    autoFetch: false,
+                    // autoFetch: false,
                 },
                 endpoints: {
                     login: { url: '/api-token-auth/', method: 'post' },

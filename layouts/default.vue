@@ -6,6 +6,13 @@
                 <div class="flex gap-x-3">
                     <nuxt-link to="/quotes/">Quotes</nuxt-link>
                     <nuxt-link to="/suppliers/">Suppliers</nuxt-link>
+                    <div v-if="$auth.loggedIn" class="flex gap-x-3">
+                        <button>Logout</button>
+                    </div>
+                    <div v-else class="flex gap-x-3">
+                        <nuxt-link to="/login">Login</nuxt-link>
+                        <nuxt-link to="/register">Register</nuxt-link>
+                    </div>
                 </div>
             </div>
         </nav>

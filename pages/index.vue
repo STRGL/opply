@@ -1,7 +1,11 @@
-<template></template>
+<template>
+    <div>
+        <h1>Home</h1>
+    </div>
+</template>
 
 <script>
 export default {
-    name: 'IndexPage',
+    name: 'HomePage',
 }
 </script>

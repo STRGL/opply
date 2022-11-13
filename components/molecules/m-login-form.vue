@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <form @submit.prevent="userLogin">
+            <form @submit.prevent="submitForm(userDetails)">
                 <div v-if="additionalFields">
                     <div>
                         <label>First Name (Optional)</label>
@@ -25,7 +25,7 @@
                     <input v-model="userDetails.password" maxlength="128" minlength="1" type="password" />
                 </div>
                 <div>
-                    <button type="submit" @click="submitForm(userDetails)">{{ buttonText }}</button>
+                    <button type="submit">{{ buttonText }}</button>
                 </div>
             </form>
         </div>
@@ -54,23 +54,13 @@ export default {
     data() {
         return {
             userDetails: {
-                username: '',
-                password: '',
+                username: 'username',
+                password: 'password',
                 firstName: '',
                 lastName: '',
                 email: '',
             },
         }
-    },
-    methods: {
-        async userLogin() {
-            try {
-                const response = await this.$auth.loginWith('local', { data: this.login })
-                console.log(response)
-            } catch (err) {
-                console.log(err)
-            }
-        },
     },
 }
 </script>

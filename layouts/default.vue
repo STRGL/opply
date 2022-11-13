@@ -7,7 +7,7 @@
                     <nuxt-link to="/quotes/">Quotes</nuxt-link>
                     <nuxt-link to="/suppliers/">Suppliers</nuxt-link>
                     <div v-if="$auth.loggedIn" class="flex gap-x-3">
-                        <button>Logout</button>
+                        <button @click="logout()">Logout</button>
                     </div>
                     <div v-else class="flex gap-x-3">
                         <nuxt-link to="/login">Login</nuxt-link>
@@ -23,7 +23,15 @@
 </template>
 
 <script>
-export default {}
+export default {
+    name: 'DefaultLayout',
+    methods: {
+        async logout() {
+            await this.$auth.logout()
+            this.$auth.setUserToken('')
+        },
+    },
+}
 </script>
 
 <style lang="scss"></style>

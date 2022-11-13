@@ -21,7 +21,7 @@ export default {
     css: [],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: ['~/plugins/axios.js'],
+    plugins: [],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -50,6 +50,27 @@ export default {
             },
             scss: {
                 implementation: require('sass'),
+            },
+        },
+    },
+    auth: {
+        strategies: {
+            local: {
+                token: {
+                    property: 'token',
+                    global: true,
+                    required: true,
+                    type: 'Token',
+                },
+                user: {
+                    property: 'auth.id',
+                    autoFetch: false,
+                },
+                endpoints: {
+                    login: { url: '/api-token-auth/', method: 'post' },
+                    logout: false,
+                    user: false,
+                },
             },
         },
     },

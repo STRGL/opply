@@ -12,8 +12,12 @@ export default {
     components: { mLoginForm },
     methods: {
         loginUser(loginInfo) {
-            console.log(loginInfo)
-            alert('Logging In')
+            this.$auth.loginWith('local', {
+                data: {
+                    username: loginInfo.username,
+                    password: loginInfo.password,
+                },
+            })
         },
     },
 }
